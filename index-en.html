@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Translation Services | RB Translation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Language Switcher */
+        .language-switcher {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 10px 15px;
+            border-radius: 25px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .language-switcher select {
+            border: none;
+            background: transparent;
+            font-weight: 600;
+            color: #333;
+            cursor: pointer;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            padding: 100px 0 50px;
+            color: white;
+        }
+
+        .header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .header .subtitle {
+            font-size: 1.4rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+            animation: fadeInUp 1s ease-out 0.2s both;
+        }
+
+        .header .tagline {
+            font-size: 1.1rem;
+            font-weight: 300;
+            animation: fadeInUp 1s ease-out 0.4s both;
+        }
+
+        /* Main Content */
+        .main-content {
+            background: white;
+            margin: 0 20px;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+            animation: slideUp 1s ease-out 0.6s both;
+        }
+
+        .intro-section {
+            padding: 60px 40px;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            text-align: center;
+        }
+
+        .intro-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: #2c3e50;
+        }
+
+        .intro-text {
+            font-size: 1.2rem;
+            color: #555;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        /* Services Grid */
+        .services {
+            padding: 80px 40px;
+        }
+
+        .services h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 60px;
+            color: #2c3e50;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .service-card {
+            background: #f8f9fa;
+            padding: 40px 30px;
+            border-radius: 15px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            border-color: #667eea;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: #2c3e50;
+        }
+
+        .service-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Why Choose Us */
+        .why-choose {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 80px 40px;
+            color: white;
+        }
+
+        .why-choose h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 60px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .feature {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .feature h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+        }
+
+        .feature p {
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 80px 40px;
+            background: #f8f9fa;
+        }
+
+        .testimonials h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 60px;
+            color: #2c3e50;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+        }
+
+        .testimonial {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            border-left: 5px solid #667eea;
+        }
+
+        .testimonial p {
+            font-style: italic;
+            margin-bottom: 20px;
+            color: #555;
+            line-height: 1.7;
+        }
+
+        .testimonial .author {
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        /* CTA Section */
+        .cta {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            padding: 80px 40px;
+            text-align: center;
+            color: white;
+        }
+
+        .cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+        }
+
+        .cta p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+
+        .contact-item {
+            background: rgba(255,255,255,0.1);
+            padding: 20px 30px;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+        }
+
+        .contact-item h4 {
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .contact-item a {
+            color: #67d3c1;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .header .subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .main-content {
+                margin: 0 10px;
+            }
+            
+            .intro-section, .services, .why-choose, .testimonials, .cta {
+                padding: 40px 20px;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Language Switcher -->
+    <div class="language-switcher">
+        <select id="languageSelect" onchange="changeLanguage()">
+            <option value="en">English</option>
+            <option value="fr">Français</option>
+        </select>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <h1>Bridging Languages & Cultures</h1>
+            <p class="subtitle">Expert English-French-Mooré translation services for businesses, NGOs and institutions</p>
+            <p class="tagline">Your trusted partner for professional and culturally adapted translations</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Intro Section -->
+        <section class="intro-section">
+            <div class="container">
+                <h2>Professional Translation Services</h2>
+                <p class="intro-text">
+                    Based in Ouagadougou, I'm a professional translator offering trilingual English-French-Mooré translation services with recognized expertise in development, legal and business sectors. My perfect knowledge of African cultural environments ensures accurate translations that faithfully convey the meaning, nuances and impact of your messages.
+                </p>
+            </div>
+        </section>
+
+        <!-- Services -->
+        <section class="services">
+            <div class="container">
+                <h2>Comprehensive Translation Solutions</h2>
+                <p style="text-align: center; font-size: 1.1rem; margin-bottom: 40px; color: #666;">
+                    Tailored to the specific needs of each sector
+                </p>
+                
+                <div class="services-grid">
+                    <div class="service-card">
+                        <h3>Legal & Official Documents</h3>
+                        <p>Professional translation of contracts, certificates, legal documents and official correspondence with precision and confidentiality.</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>Business Communications</h3>
+                        <p>Corporate documents, presentations, marketing materials and commercial correspondence adapted to your target market.</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>NGO & International Organizations</h3>
+                        <p>Specialized in development projects, grant proposals, reports and communication materials for international cooperation.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose Us -->
+        <section class="why-choose">
+            <div class="container">
+                <h2>Why Choose RB Translation?</h2>
+                <div class="features-grid">
+                    <div class="feature">
+                        <h3>Rigorous Quality</h3>
+                        <p>Systematic review process ensuring maximum precision in every document with thorough quality control.</p>
+                    </div>
+                    <div class="feature">
+                        <h3>Cultural Expertise</h3>
+                        <p>Deep understanding of African cultural realities, guaranteeing translations that authentically speak to your audience.</p>
+                    </div>
+                    <div class="feature">
+                        <h3>Reliable Delivery</h3>
+                        <p>Strict deadline compliance with express processing options available according to your needs.</p>
+                    </div>
+                    <div class="feature">
+                        <h3>Confidentiality</h3>
+                        <p>Secure handling of your sensitive documents with confidentiality agreements signed as standard practice.</p>
+                    </div>
+                    <div class="feature">
+                        <h3>Native Expertise</h3>
+                        <p>Native French speaker, fluent English and deep knowledge of Mooré language and culture.</p>
+                    </div>
+                    <div class="feature">
+                        <h3>Personal Service</h3>
+                        <p>Privileged client relationships with personalized follow-up and preferential rates for recurring projects.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section class="testimonials">
+            <div class="container">
+                <h2>Client Satisfaction Speaks for Our Quality</h2>
+                <div class="testimonial-grid">
+                    <div class="testimonial">
+                        <p>"Roland provided exceptional legal translations with remarkable attention to detail and strict deadline compliance. His work greatly facilitated our international partnerships."</p>
+                        <div class="author">- International Law Firm</div>
+                    </div>
+                    <div class="testimonial">
+                        <p>"We trust RB Translation for all our translation needs. His translations are always accurate, culturally adapted and delivered on time. An indispensable partner for our NGO."</p>
+                        <div class="author">- Development NGO Director</div>
+                    </div>
+                    <div class="testimonial">
+                        <p>"Roland's translation quality and understanding of development issues make him a preferred collaborator. His Mooré translations enabled us to better communicate with local communities."</p>
+                        <div class="author">- International Organization</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="cta">
+            <div class="container">
+                <h2>Ready to Start Your Translation Project?</h2>
+                <p>Whether you need urgent translation or long-term partnership, we're here to support you with customized solutions.</p>
+                <p><strong>Send us your document by email or WhatsApp and receive your detailed quote within 2 business hours.</strong></p>
+                
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <h4>Email</h4>
+                        <a href="mailto:contact@rb-traduction.com">contact@rb-traduction.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <h4>WhatsApp</h4>
+                        <a href="https://wa.me/22670123456">+226 70 12 34 56</a>
+                    </div>
+                    <div class="contact-item">
+                        <h4>Location</h4>
+                        <span>Ouagadougou, Burkina Faso</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        function changeLanguage() {
+            const select = document.getElementById('languageSelect');
+            const selectedLang = select.value;
+            
+            if (selectedLang === 'fr') {
+                // Redirect to French version (your original site)
+                window.location.href = 'https://rolandbagh.github.io/rb-traduction/';
+            }
+            // If English is selected, stay on current page
+        }
+
+        // Add smooth scrolling for better UX
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Add scroll animation for service cards
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all service cards
+        document.querySelectorAll('.service-card, .feature, .testimonial').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>
